@@ -1,17 +1,14 @@
 
-
 from flask import Flask, render_template, redirect, request, url_for
 from functions import *
 
 app = Flask(__name__)
 
-@app.route("/auth/login")
-def login():
-	return "Hello World!"
+@app.route("/", methods=["GET", "POST"])
+def landing_page():
+	return render_template("landing_page.html")
 
-@app.route("/auth/signup")
-def signup():
-	return "Hello World2!"
+
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)
